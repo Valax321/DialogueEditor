@@ -34,6 +34,7 @@ namespace Valax321.DialogueEditor.Project
             }
             catch (Exception ex)
             {
+                Logger.Error(ex);
                 MessageBox.Show(
                     string.Format(Strings.ProjectLoadFailedMessage, ex.Message), 
                     Strings.ProjectLoadFailedMessage, 
@@ -73,6 +74,7 @@ namespace Valax321.DialogueEditor.Project
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex);
                     result = MessageBox.Show(string.Format(Strings.ProjectSaveFailedMessage, ex.Message),
                         Strings.ProjectSaveFailedCaption, MessageBoxButtons.RetryCancel);
                 }

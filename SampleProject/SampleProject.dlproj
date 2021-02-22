@@ -1,0 +1,11 @@
+{
+  "Globals": {
+    "Vars": [
+      {
+        "Name": "Test Variable",
+        "VarType": "Boolean",
+        "DefaultValue": "False"
+      }
+    ]
+  }
+}

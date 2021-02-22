@@ -42,14 +42,35 @@ namespace Valax321.DialogueEditor.Forms
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maximizeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControlProjectSettings = new System.Windows.Forms.TabControl();
+            this.tabDialogue = new System.Windows.Forms.TabPage();
+            this.tabVariables = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.variableListView = new System.Windows.Forms.ListView();
+            this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.variablePropertyGrid = new System.Windows.Forms.PropertyGrid();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.variableSearchTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tabProjectSettings = new System.Windows.Forms.TabPage();
             this.openProjectFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveProjectFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.windowListSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.mainMenuStrip.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControlProjectSettings.SuspendLayout();
+            this.tabVariables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -57,7 +78,8 @@ namespace Valax321.DialogueEditor.Forms
             this.mainMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.windowToolStripMenuItem});
+            this.windowToolStripMenuItem,
+            this.helpToolStripMenuItem});
             resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
             // 
@@ -117,7 +139,8 @@ namespace Valax321.DialogueEditor.Forms
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.maximizeMenuItem,
-            this.minimizeMenuItem});
+            this.minimizeMenuItem,
+            this.windowListSeparator});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             resources.ApplyResources(this.windowToolStripMenuItem, "windowToolStripMenuItem");
             // 
@@ -133,32 +156,143 @@ namespace Valax321.DialogueEditor.Forms
             resources.ApplyResources(this.minimizeMenuItem, "minimizeMenuItem");
             this.minimizeMenuItem.Click += new System.EventHandler(this.minimizeMenuItem_Click);
             // 
-            // tabControl1
+            // helpToolStripMenuItem
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openDocumentationToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
-            // tabPage1
+            // openDocumentationToolStripMenuItem
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.openDocumentationToolStripMenuItem.Name = "openDocumentationToolStripMenuItem";
+            resources.ApplyResources(this.openDocumentationToolStripMenuItem, "openDocumentationToolStripMenuItem");
+            this.openDocumentationToolStripMenuItem.Click += new System.EventHandler(this.openDocumentationToolStripMenuItem_Click);
             // 
-            // tabPage2
+            // aboutToolStripMenuItem
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // tabPage3
+            // tabControlProjectSettings
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabControlProjectSettings.Controls.Add(this.tabDialogue);
+            this.tabControlProjectSettings.Controls.Add(this.tabVariables);
+            this.tabControlProjectSettings.Controls.Add(this.tabProjectSettings);
+            resources.ApplyResources(this.tabControlProjectSettings, "tabControlProjectSettings");
+            this.tabControlProjectSettings.Name = "tabControlProjectSettings";
+            this.tabControlProjectSettings.SelectedIndex = 0;
+            // 
+            // tabDialogue
+            // 
+            resources.ApplyResources(this.tabDialogue, "tabDialogue");
+            this.tabDialogue.Name = "tabDialogue";
+            this.tabDialogue.UseVisualStyleBackColor = true;
+            // 
+            // tabVariables
+            // 
+            this.tabVariables.Controls.Add(this.splitContainer1);
+            this.tabVariables.Controls.Add(this.toolStrip1);
+            resources.ApplyResources(this.tabVariables, "tabVariables");
+            this.tabVariables.Name = "tabVariables";
+            this.tabVariables.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.variableListView);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.variablePropertyGrid);
+            // 
+            // variableListView
+            // 
+            this.variableListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.variableListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NameColumn});
+            resources.ApplyResources(this.variableListView, "variableListView");
+            this.variableListView.HideSelection = false;
+            this.variableListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("variableListView.Items")))});
+            this.variableListView.MultiSelect = false;
+            this.variableListView.Name = "variableListView";
+            this.variableListView.ShowItemToolTips = true;
+            this.variableListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.variableListView.UseCompatibleStateImageBehavior = false;
+            this.variableListView.View = System.Windows.Forms.View.Details;
+            // 
+            // NameColumn
+            // 
+            resources.ApplyResources(this.NameColumn, "NameColumn");
+            // 
+            // variablePropertyGrid
+            // 
+            resources.ApplyResources(this.variablePropertyGrid, "variablePropertyGrid");
+            this.variablePropertyGrid.Name = "variablePropertyGrid";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.variableSearchTextBox,
+            this.toolStripSeparator3,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.Name = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            resources.ApplyResources(this.toolStripLabel1, "toolStripLabel1");
+            // 
+            // variableSearchTextBox
+            // 
+            this.variableSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.variableSearchTextBox, "variableSearchTextBox");
+            this.variableSearchTextBox.Name = "variableSearchTextBox";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Valax321.DialogueEditor.Properties.Resources.AddIcon;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Valax321.DialogueEditor.Properties.Resources.AddFolder;
+            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
+            this.toolStripButton2.Name = "toolStripButton2";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Valax321.DialogueEditor.Properties.Resources.Remove;
+            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
+            this.toolStripButton3.Name = "toolStripButton3";
+            // 
+            // tabProjectSettings
+            // 
+            resources.ApplyResources(this.tabProjectSettings, "tabProjectSettings");
+            this.tabProjectSettings.Name = "tabProjectSettings";
+            this.tabProjectSettings.UseVisualStyleBackColor = true;
             // 
             // openProjectFileDialog
             // 
@@ -169,11 +303,16 @@ namespace Valax321.DialogueEditor.Forms
             // 
             resources.ApplyResources(this.saveProjectFileDialog, "saveProjectFileDialog");
             // 
+            // windowListSeparator
+            // 
+            this.windowListSeparator.Name = "windowListSeparator";
+            resources.ApplyResources(this.windowListSeparator, "windowListSeparator");
+            // 
             // ProjectForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlProjectSettings);
             this.Controls.Add(this.mainMenuStrip);
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "ProjectForm";
@@ -182,7 +321,15 @@ namespace Valax321.DialogueEditor.Forms
             this.Resize += new System.EventHandler(this.ProjectForm_Resize);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlProjectSettings.ResumeLayout(false);
+            this.tabVariables.ResumeLayout(false);
+            this.tabVariables.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,14 +346,29 @@ namespace Valax321.DialogueEditor.Forms
         private System.Windows.Forms.ToolStripMenuItem saveAsMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem quitMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl tabControlProjectSettings;
+        private System.Windows.Forms.TabPage tabDialogue;
+        private System.Windows.Forms.TabPage tabVariables;
+        private System.Windows.Forms.TabPage tabProjectSettings;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maximizeMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizeMenuItem;
         private System.Windows.Forms.OpenFileDialog openProjectFileDialog;
         public System.Windows.Forms.SaveFileDialog saveProjectFileDialog;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ListView variableListView;
+        private System.Windows.Forms.PropertyGrid variablePropertyGrid;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ColumnHeader NameColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox variableSearchTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openDocumentationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator windowListSeparator;
     }
 }

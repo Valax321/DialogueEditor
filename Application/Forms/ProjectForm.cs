@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using NLog;
 using Valax321.DialogueEditor.Models;
@@ -8,6 +10,8 @@ namespace Valax321.DialogueEditor.Forms
 {
     public partial class ProjectForm : Form
     {
+        private const string HelpUrl = "https://github.com/Valax321/DialogueEditor/wiki";
+
         private static Logger Logger = LogManager.GetCurrentClassLogger();
 
         private ProjectModel Model { get; }
@@ -17,6 +21,19 @@ namespace Valax321.DialogueEditor.Forms
             InitializeComponent();
             Logger.Info("Created project form");
             Model = new ProjectModel(this);
+
+            var imageList = new ImageList
+            {
+                ColorDepth = ColorDepth.Depth32Bit, 
+                ImageSize = new Size(32, 32)
+            };
+
+            imageList.Images.AddRange(Resources.DialogueIcon, Resources.Variables, Resources.SettingsIcon);
+
+            tabControlProjectSettings.ImageList = imageList;
+            tabDialogue.ImageIndex = 0;
+            tabVariables.ImageIndex = 1;
+            tabProjectSettings.ImageIndex = 2;
         }
 
         private void LoadFormSettings()
@@ -67,6 +84,17 @@ namespace Valax321.DialogueEditor.Forms
         private void quitMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBoxForm();
+            about.ShowDialog(this);
+        }
+
+        private void openDocumentationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(HelpUrl);
         }
 
         #endregion

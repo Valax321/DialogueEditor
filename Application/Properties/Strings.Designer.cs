@@ -61,7 +61,7 @@ namespace Valax321.DialogueEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Project: {0}.
+        ///   Looks up a localized string similar to Dialogue Editor: {0}.
         /// </summary>
         public static string ProjectFormWindowTitle {
             get {

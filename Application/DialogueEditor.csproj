@@ -70,7 +70,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MathUtils.cs" />
+    <Compile Include="Forms\AboutBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBoxForm.Designer.cs">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Variable.cs" />
+    <Compile Include="Utils\CollectionUtils.cs" />
+    <Compile Include="Utils\MathUtils.cs" />
     <Compile Include="Project\DialogueProject.cs" />
     <Compile Include="Models\IFormModel.cs" />
     <Compile Include="NodeEditor\DialogueContext.cs" />
@@ -95,8 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="StringUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Project\Variables.cs" />
+    <EmbeddedResource Include="Forms\AboutBoxForm.resx">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NodeForm.resx">
       <DependentUpon>NodeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +157,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="Icons\AddFolder.png" />
+    <Content Include="Icons\AddIcon.png" />
+    <Content Include="Icons\DialogueIcon.png" />
+    <Content Include="Icons\Icon.png" />
+    <Content Include="Icons\Remove.png" />
+    <Content Include="Icons\SettingsIcon.png" />
+    <Content Include="Icons\Variables.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

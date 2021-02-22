@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Dialogue Editor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Dialogue Editor for games")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Valax321")]
 [assembly: AssemblyProduct("Dialogue Editor")]
